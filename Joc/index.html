@@ -1,0 +1,62 @@
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <title>Joc</title>
+        <link rel="stylesheet" id="css" href="css/style.css">
+        <script src="js/rectangles.js"></script>
+        <script src="js/initialize.js"></script>
+        <script src="js/values.js"></script>
+        <script src="js/input.js"></script>
+        <script src="js/status_bar.js"></script>
+        <script src="js/computers_wires.js"></script>
+        <script src="js/show_messages.js"></script>
+        <script src="js/camera.js"></script>
+        <script src="js/collision.js"></script>
+        <script src="js/infestation.js"></script>
+        <script src="js/timer.js"></script>
+        <script src="js/high_score.js"></script>
+        <script src="js/end_game.js"></script>
+    </head>
+    <!-- eveniment_onload -->
+    <!-- input -->
+    <body id="body" onload="slider_rows(); show_name_change(); ShowMessages.show_date();">
+        <center>
+        <p>Name: <input type="text" id="name" onkeyup="show_name_change()"></p>
+        <p id="difficulty_paragraph">Difficulty: 
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </p>
+        <p>Custom settings:
+            <form id="custom_settings">
+                <input type="radio" name="custom_settings" value=0 onclick="show_custom_settings(0)" autocomplete="off" checked> No
+                <input type="radio" name="custom_settings" value=1 onclick="show_custom_settings(1)" autocomplete="off"> Yes
+            </form> 
+        </p>
+        <div id="custom_input" style="display: none;">
+            <p>Rows / Cols: <input type="range" min="2" max="6" value="4" id="slider_rows" oninput="slider_rows()"> <span id="rows">4</span></p>
+            <p>Infect random computer time: <input type="textarea" id="custom_random_computer_time"></p>
+            <p>Infection spread time: <input type="textarea" id="custom_spreading_time"></p>
+            <p>Other settings:
+                <form id="custom_score_settings">
+                    <input type="checkbox" id="save_high_score" value="save_high_score" checked>Save Highscore
+                </form> 
+            </p>
+            <p>Color Options: <br>
+                <select id="color_settings" multiple>
+                        <option id="grey_background">Grey Background</option>
+                        <option id="blue_text_color">Blue Text Color</option>
+                        <option id="bold_text">Bold Text</option>
+                </select> 
+            </p>
+        </div>
+        <p><button type="button" onclick="start()">Start</button></p>
+        <div id="current_values"> 
+            <div id="current_name_change"><div></div></div>
+        </div>
+        <p id="current_date"></p>
+        </center>
+    </body>
+</html>
