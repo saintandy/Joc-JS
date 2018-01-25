@@ -1,3 +1,5 @@
+# ATENTIE: Merge doar pe firefox (pe chrome nu merge eventul de click)
+
 ## Helper pentru notare
 
 rectangles - clasa pentru dreptunghiuri
